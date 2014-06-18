@@ -424,7 +424,7 @@ _GL_CXXALIAS_RPL (memmem, void *,
                   (void const *__haystack, size_t __haystack_len,
                    void const *__needle, size_t __needle_len));
 # else
-#  if ! 0
+#  if ! 1
 _GL_FUNCDECL_SYS (memmem, void *,
                   (void const *__haystack, size_t __haystack_len,
                    void const *__needle, size_t __needle_len)

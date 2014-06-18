@@ -381,7 +381,7 @@ typedef unsigned int sigset_t;
 #endif
 
 /* Define sighandler_t, the type of signal handlers.  A GNU extension.  */
-#if !0
+#if !1
 # ifdef __cplusplus
 extern "C" {
 # endif
@@ -415,7 +415,7 @@ typedef void (*sighandler_t) (int);
 
 
 #if 1
-# if !0
+# if !1
 
 /* Maximum signal number + 1.  */
 #  ifndef NSIG
@@ -431,7 +431,7 @@ typedef int verify_NSIG_constraint[NSIG <= 32 ? 1 : -1];
 # endif
 
 /* Test whether a given signal is contained in a signal set.  */
-# if 0
+# if 1
 /* This function is defined as a macro on MacOS X.  */
 #  if defined __cplusplus && defined GNULIB_NAMESPACE
 #   undef sigismember
@@ -444,7 +444,7 @@ _GL_CXXALIAS_SYS (sigismember, int, (const sigset_t *set, int sig));
 _GL_CXXALIASWARN (sigismember);
 
 /* Initialize a signal set to the empty set.  */
-# if 0
+# if 1
 /* This function is defined as a macro on MacOS X.  */
 #  if defined __cplusplus && defined GNULIB_NAMESPACE
 #   undef sigemptyset
@@ -456,7 +456,7 @@ _GL_CXXALIAS_SYS (sigemptyset, int, (sigset_t *set));
 _GL_CXXALIASWARN (sigemptyset);
 
 /* Add a signal to a signal set.  */
-# if 0
+# if 1
 /* This function is defined as a macro on MacOS X.  */
 #  if defined __cplusplus && defined GNULIB_NAMESPACE
 #   undef sigaddset
@@ -469,7 +469,7 @@ _GL_CXXALIAS_SYS (sigaddset, int, (sigset_t *set, int sig));
 _GL_CXXALIASWARN (sigaddset);
 
 /* Remove a signal from a signal set.  */
-# if 0
+# if 1
 /* This function is defined as a macro on MacOS X.  */
 #  if defined __cplusplus && defined GNULIB_NAMESPACE
 #   undef sigdelset
@@ -482,7 +482,7 @@ _GL_CXXALIAS_SYS (sigdelset, int, (sigset_t *set, int sig));
 _GL_CXXALIASWARN (sigdelset);
 
 /* Fill a signal set with all possible signals.  */
-# if 0
+# if 1
 /* This function is defined as a macro on MacOS X.  */
 #  if defined __cplusplus && defined GNULIB_NAMESPACE
 #   undef sigfillset
@@ -494,7 +494,7 @@ _GL_CXXALIAS_SYS (sigfillset, int, (sigset_t *set));
 _GL_CXXALIASWARN (sigfillset);
 
 /* Return the set of those blocked signals that are pending.  */
-# if !0
+# if !1
 _GL_FUNCDECL_SYS (sigpending, int, (sigset_t *set) _GL_ARG_NONNULL ((1)));
 # endif
 _GL_CXXALIAS_SYS (sigpending, int, (sigset_t *set));
@@ -505,7 +505,7 @@ _GL_CXXALIASWARN (sigpending);
    combining it with *SET as indicated in OPERATION.
    In this implementation, you are not allowed to change a signal handler
    while the signal is blocked.  */
-# if !0
+# if !1
 #  define SIG_BLOCK   0  /* blocked_set = blocked_set | *set; */
 #  define SIG_SETMASK 1  /* blocked_set = *set; */
 #  define SIG_UNBLOCK 2  /* blocked_set = blocked_set & ~*set; */
@@ -528,7 +528,7 @@ typedef void (*_gl_function_taking_int_returning_void_t) (int);
 # ifdef __cplusplus
 }
 # endif
-# if !0
+# if !1
 #  if !(defined __cplusplus && defined GNULIB_NAMESPACE)
 #   define signal rpl_signal
 #  endif
@@ -543,7 +543,7 @@ _GL_CXXALIAS_SYS (signal, _gl_function_taking_int_returning_void_t,
 _GL_CXXALIASWARN (signal);
 
 /* Raise signal SIG.  */
-# if !0 && GNULIB_defined_SIGPIPE
+# if !1 && GNULIB_defined_SIGPIPE
 #  if !(defined __cplusplus && defined GNULIB_NAMESPACE)
 #   undef raise
 #   define raise rpl_raise
@@ -595,9 +595,9 @@ _GL_WARN_ON_USE (sigprocmask, "sigprocmask is unportable - "
 
 
 #if 1
-# if !0
+# if !1
 
-#  if !0
+#  if !1
 
 #   if !GNULIB_defined_siginfo_types
 
@@ -626,7 +626,7 @@ typedef struct siginfo_t siginfo_t;
 #    define GNULIB_defined_siginfo_types 1
 #   endif
 
-#  endif /* !0 */
+#  endif /* !1 */
 
 /* We assume that platforms which lack the sigaction() function also lack
    the 'struct sigaction' type, and vice versa.  */
@@ -665,7 +665,7 @@ _GL_FUNCDECL_SYS (sigaction, int, (int, const struct sigaction *restrict,
 
 #  define sa_sigaction sa_handler
 
-# endif /* !0, !1 */
+# endif /* !1, !1 */
 
 _GL_CXXALIAS_SYS (sigaction, int, (int, const struct sigaction *restrict,
                                    struct sigaction *restrict));
